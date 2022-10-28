@@ -81,6 +81,8 @@ RUN mkdir -p /var/run/aurae && \
   chown -R aurae:aurae /var/run/aurae && \
   chmod 2777 /var/run/aurae
 
+COPY scripts /usr/bin
+
 USER aurae
 
 ENV PATH="$PATH:/var/lib/aurae/.cargo/bin" 
@@ -92,7 +94,6 @@ RUN make -C /src pki config
 RUN make -C /src
 
 COPY --chown=aurae:aurae src/auraescript/examples /var/lib/aurae/examples
-COPY scripts /usr/bin
 
 USER root
 

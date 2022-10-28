@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# This is a workaround for the quickstart Makefile targets
+
+if [[ $1 -eq "-E" ]]; then
+	shift
+fi
+
+exec $@
+
