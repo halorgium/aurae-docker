@@ -1,3 +1,10 @@
 #!/usr/bin/env bash
 
-docker exec -ti auraed gosu aurae /bin/bash
+set -uex -o pipefail
+
+if [ $# -eq 0 ]; then
+	CMD="gosu aurae /bin/bash"
+else
+	CMD=$*
+fi
+docker exec -ti auraed $CMD
