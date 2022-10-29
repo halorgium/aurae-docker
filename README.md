@@ -11,7 +11,6 @@ Make sure you have a Docker install configured: https://www.docker.com/get-start
 ```bash
 git clone https://github.com/halorgium/aurae-docker
 cd aurae-docker
-git clone https://github.com/aurae-runtime/aurae src
 ```
 
 ## Building
